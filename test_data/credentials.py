@@ -1,4 +1,9 @@
-USERNAME = "standard_user"
-PASSWORD = "secret_sauce"
-BASE_URL = "https://www.saucedemo.com"
-INVENTORY_URL = "https://www.saucedemo.com/inventory.html"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+BASE_URL = os.getenv("BASE_URL")
+INVENTORY_URL = os.getenv("INVENTORY_URL")
