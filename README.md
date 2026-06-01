@@ -1,0 +1,1 @@
+![CI](https://github.com/ArthurPinhas/python-playwright-automation/actions/workflows/ci.yml/badge.svg)
