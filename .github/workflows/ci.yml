@@ -33,6 +33,7 @@ jobs:
           INVENTORY_URL: ${{ secrets.INVENTORY_URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
         run: python -m pytest tests/ -v
 
       - name: Upload failure screenshots
