@@ -1,8 +1,11 @@
+import pytest
 from playwright.sync_api import Page, expect
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from test_data.credentials import USERNAME, PASSWORD, INVENTORY_URL
 
+@pytest.mark.regression
+@pytest.mark.smoke
 def test_add_item_to_cart(page: Page):
     # Login first
     login_page = LoginPage(page)

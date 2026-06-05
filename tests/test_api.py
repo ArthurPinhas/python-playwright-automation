@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.regression
 def test_get_users(api_context):
     response = api_context.get("/users")
     assert response.status == 200
@@ -5,6 +8,8 @@ def test_get_users(api_context):
     assert isinstance(body, list)
     assert len(body) > 0
 
+@pytest.mark.regression
+@pytest.mark.smoke
 def test_create_user(api_context):
     new_user = {
         "title": "testing post",
@@ -18,6 +23,7 @@ def test_create_user(api_context):
     assert body["body"] == new_user["body"]
     assert body["userId"] == new_user["userId"]
 
+@pytest.mark.regression
 def test_delete_user(api_context):
     response = api_context.delete("/posts/1")
     body = response.json()
